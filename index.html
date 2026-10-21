@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS KNIGHT ANIME - Watch Anime Smoothly, Anytime</title>
+  <meta name="description" content="NEXUS KNIGHT ANIME - Watch anime smoothly, anytime. Developed by Keelz Valentine.">
+  
+  <!-- File CSS utama -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loadingScreen" aria-live="polite">
+    <div class="loading-content">
+      <div class="loading-logo">NEXUS KNIGHT ANIME</div>
+      <div id="loadingProgress">0%</div>
+    </div>
+  </div>
+
+  <!-- Error Message Container (Disembunyikan secara default) -->
+  <div id="errorMessage" aria-live="assertive" role="alert"></div>
+
+  <!-- Header & Navigasi Utama -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="#" aria-label="NEXUS KNIGHT ANIME Home">
+          <span class="logo-title">NEXUS KNIGHT</span>
+          <span class="logo-subtitle">ANIME</span>
+        </a>
+      </div>
+
+      <nav aria-label="Navigasi Utama">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#anime">Anime</a></li>
+          <li><a href="#genres">Genres</a></li>
+          <li><a href="#trending">Trending</a></li>
+          <li><a href="#chat">Chat</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="searchToggleBtn" aria-label="Buka Pencarian">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <main>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section" aria-label="Hero Section">
+      <!-- Area background/hero image placeholder tanpa gambar berat langsung -->
+      <div class="hero-bg-placeholder" aria-hidden="true"></div>
+      
+      <div class="hero-content">
+        <h1 class="hero-title">NEXUS KNIGHT ANIME</h1>
+        <p class="hero-subtitle">Watch anime smoothly, anytime.</p>
+        <div class="hero-buttons">
+          <a href="#anime" class="btn btn-primary">EXPLORE ANIME</a>
+          <a href="#trending" class="btn btn-secondary">TRENDING NOW</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section id="search" class="search-section" aria-label="Pencarian Anime">
+      <form id="searchForm" role="search">
+        <input type="search" id="searchInput" placeholder="Search anime..." aria-label="Search anime" required>
+        <button type="submit" aria-label="Submit Search">Search</button>
+      </form>
+    </section>
+
+    <!-- Continue Watching Section -->
+    <section id="continue" class="content-section" aria-labelledby="headingContinue">
+      <h2 id="headingContinue">CONTINUE WATCHING</h2>
+      <div id="continueWatching"></div>
+    </section>
+
+    <!-- Trending Section -->
+    <section id="trending" class="content-section" aria-labelledby="headingTrending">
+      <h2 id="headingTrending">TRENDING NOW</h2>
+      <div id="trendingList"></div>
+    </section>
+
+    <!-- Latest Section -->
+    <section id="latest" class="content-section" aria-labelledby="headingLatest">
+      <h2 id="headingLatest">LATEST ANIME</h2>
+      <div id="latestList"></div>
+    </section>
+
+    <!-- Popular Section -->
+    <section id="popular" class="content-section" aria-labelledby="headingPopular">
+      <h2 id="headingPopular">POPULAR ANIME</h2>
+      <div id="popularList"></div>
+    </section>
+
+    <!-- Genres Section -->
+    <section id="genres" class="content-section" aria-labelledby="headingGenres">
+      <h2 id="headingGenres">GENRES</h2>
+      <div id="genreList"></div>
+    </section>
+
+    <!-- Developer Section -->
+    <section id="developer" class="content-section developer-section" aria-labelledby="headingDeveloper">
+      <h2 id="headingDeveloper">DEVELOPER</h2>
+      <article class="developer-card">
+        <h3>Keelz Valentine</h3>
+        <p>Developer of NEXUS KNIGHT ANIME</p>
+        <a href="https://whatsapp.com/channel/0029Vb8KFvB5K3zXkMDEiv1M" target="_blank" rel="noopener noreferrer" class="btn btn-dev">SALURAN DEVELOPER</a>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>NEXUS KNIGHT ANIME</h2>
+        <p>Developed by Keelz Valentine</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://whatsapp.com/channel/0029Vb8KFvB5K3zXkMDEiv1M" target="_blank" rel="noopener noreferrer">Saluran Developer WhatsApp</a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 NEXUS KNIGHT ANIME</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- File JavaScript Utama -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
