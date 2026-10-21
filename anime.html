@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime — NEXUS KNIGHT ANIME</title>
+  <meta name="description" content="Explore the latest anime library and discover your next watch on NEXUS KNIGHT ANIME.">
+  
+  <!-- File CSS utama -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- File Logic JavaScript untuk Halaman Anime -->
+  <script type="module" src="anime.js"></script>
+</head>
+<body>
+
+  <!-- Header & Navigasi Utama -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html" aria-label="NEXUS KNIGHT ANIME Home">
+          <span class="logo-title">NEXUS KNIGHT</span>
+          <span class="logo-subtitle">ANIME</span>
+        </a>
+      </div>
+
+      <nav aria-label="Navigasi Utama">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="anime.html" class="active">Anime</a></li>
+          <li><a href="index.html#genres">Genres</a></li>
+          <li><a href="index.html#trending">Trending</a></li>
+          <li><a href="index.html#chat">Chat</a></li>
+          <li><a href="index.html#about">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#animeSearchForm" class="btn btn-secondary" style="min-height: 38px; padding: 6px 14px; font-size: 0.8rem;">Search</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <main>
+
+    <!-- Page Header Section -->
+    <section class="content-section" aria-labelledby="pageTitle">
+      <div class="page-header" style="margin-block: 16px 8px;">
+        <h1 id="pageTitle" style="font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 900; color: var(--text-white);">ANIME LIBRARY</h1>
+        <p style="color: var(--text-gray); font-size: 0.95rem;">Explore the latest anime and discover your next watch.</p>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section" aria-label="Pencarian Library Anime">
+      <form id="animeSearchForm" role="search">
+        <input 
+          id="animeSearchInput" 
+          type="search" 
+          placeholder="Search anime..." 
+          autocomplete="off"
+          aria-label="Search anime in library" 
+          required
+        >
+        <button type="submit" aria-label="Submit Search">SEARCH</button>
+      </form>
+    </section>
+
+    <!-- Filter & Sort Section -->
+    <section class="content-section" aria-label="Filter dan Pengurutan Anime">
+      <div class="filter-container" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; background-color: var(--bg-card); padding: 12px 16px; border: 1px solid var(--border-color); border-radius: var(--border-radius);">
+        
+        <!-- Filter Options Group -->
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+          <!-- Sort Filter -->
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <label for="sortSelect" style="font-size: 0.85rem; color: var(--text-gray); font-weight: 600;">Sort:</label>
+            <select id="sortSelect" style="background-color: var(--bg-black); color: var(--text-white); border: 1px solid var(--border-color); padding: 6px 10px; border-radius: var(--border-radius); font-size: 0.85rem;">
+              <option value="latest">Latest</option>
+              <option value="popular">Popular</option>
+            </select>
+          </div>
+
+          <!-- Tag Filter -->
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <label for="tagSelect" style="font-size: 0.85rem; color: var(--text-gray); font-weight: 600;">Tag:</label>
+            <select id="tagSelect" style="background-color: var(--bg-black); color: var(--text-white); border: 1px solid var(--border-color); padding: 6px 10px; border-radius: var(--border-radius); font-size: 0.85rem;">
+              <option value="">All</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Quick Page Nav Controls -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <button type="button" id="prevPage" class="btn btn-secondary" style="min-height: 36px; padding: 4px 12px; font-size: 0.8rem;" aria-label="Halaman Sebelumnya">PREVIOUS</button>
+          <button type="button" id="nextPage" class="btn btn-secondary" style="min-height: 36px; padding: 4px 12px; font-size: 0.8rem;" aria-label="Halaman Berikutnya">NEXT</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Genre List Container -->
+    <section class="content-section" aria-label="Daftar Genre">
+      <div id="animeGenres"></div>
+    </section>
+
+    <!-- Loading State Container -->
+    <div id="animeLoading" hidden aria-live="polite" style="width: min(1200px, calc(100% - 32px)); margin-inline: auto; padding-block: 24px; text-align: center;">
+      <p style="color: var(--neon-green); font-weight: 700; font-size: 1rem;">Loading anime...</p>
+    </div>
+
+    <!-- Empty State Container -->
+    <div id="animeEmpty" hidden style="width: min(1200px, calc(100% - 32px)); margin-inline: auto; padding-block: 32px; text-align: center; background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius);">
+      <h3 style="font-size: 1.1rem; color: var(--text-white); margin-bottom: 6px;">Anime tidak ditemukan.</h3>
+      <p style="color: var(--text-gray); font-size: 0.9rem;">Coba gunakan kata kunci atau filter lain.</p>
+    </div>
+
+    <!-- Error State Container -->
+    <div id="animeError" hidden aria-live="assertive" style="width: min(1200px, calc(100% - 32px)); margin-inline: auto; padding-block: 24px; text-align: center; background-color: var(--bg-card); border: 1px solid var(--neon-red); border-radius: var(--border-radius);">
+      <p style="color: var(--neon-red); font-weight: 700; margin-bottom: 12px;">Gagal memuat anime.</p>
+      <button type="button" id="animeRetry" class="btn btn-primary" style="min-height: 38px; padding: 6px 16px; font-size: 0.8rem;">COBA LAGI</button>
+    </div>
+
+    <!-- Anime Grid Container -->
+    <section class="content-section" aria-label="Katalog Anime">
+      <div id="animeGrid" class="anime-grid"></div>
+    </section>
+
+    <!-- Pagination Navigation Container -->
+    <section class="content-section" aria-label="Navigasi Halaman">
+      <nav id="pagination" aria-label="Pagination" style="display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 16px;">
+        <button type="button" id="btnPaginationPrev" class="btn btn-secondary" aria-label="Halaman Sebelumnya">PREVIOUS</button>
+        <span id="pageIndicator" style="font-size: 0.9rem; font-weight: 700; color: var(--neon-green); padding-inline: 8px;">PAGE 1</span>
+        <button type="button" id="btnPaginationNext" class="btn btn-secondary" aria-label="Halaman Berikutnya">NEXT</button>
+      </nav>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>NEXUS KNIGHT ANIME</h2>
+        <p>Developed by Keelz Valentine</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://whatsapp.com/channel/0029Vb8KFvB5K3zXkMDEiv1M" target="_blank" rel="noopener noreferrer" class="btn btn-dev">SALURAN DEVELOPER</a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 NEXUS KNIGHT ANIME</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
