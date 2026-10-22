@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Chat — NEXUS KNIGHT ANIME</title>
+  <meta name="description" content="Global Chat dan Diskusi Anime Realtime - NEXUS KNIGHT ANIME. Developed by Keelz Valentine.">
+  <meta name="theme-color" content="#050505">
+
+  <!-- File CSS Utama -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- File Script Logic Chat -->
+  <script type="module" src="./chat.js" defer></script>
+</head>
+<body>
+
+  <!-- Header & Navigasi Utama -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="/" aria-label="NEXUS KNIGHT ANIME Home">
+          <span class="logo-title">NEXUS KNIGHT</span>
+          <span class="logo-subtitle">ANIME</span>
+        </a>
+      </div>
+
+      <nav aria-label="Navigasi Utama">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/anime.html">Anime</a></li>
+          <li><a href="/chat.html" class="active">Chat</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/anime.html" class="btn btn-secondary">Cari Anime</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <main>
+
+    <!-- Main Chat Section -->
+    <section id="chatPage" class="content-section" aria-label="Diskusi Global Chat Anime">
+      
+      <!-- Page Header -->
+      <div class="chat-header-title">
+        <h1>Global Chat</h1>
+        <p>Diskusikan anime bersama pengguna NEXUS KNIGHT ANIME.</p>
+      </div>
+
+      <!-- Connection Status Indicator -->
+      <div id="chatConnection" class="chat-status-badge" aria-live="polite">
+        Menghubungkan...
+      </div>
+
+      <!-- Username / Identity Section -->
+      <div id="chatIdentity" class="chat-identity-box">
+        <label for="chatUsername">Nama pengguna</label>
+        <input
+          id="chatUsername"
+          type="text"
+          maxlength="24"
+          autocomplete="nickname"
+          placeholder="Masukkan nama..."
+        >
+      </div>
+
+      <!-- Notice Box -->
+      <div id="chatNotice" class="chat-notice-box">
+        Gunakan nama pengguna yang sopan dan jangan spam.
+      </div>
+
+      <!-- Chat Box Container -->
+      <div class="chat-box-wrapper">
+        
+        <!-- Loading State -->
+        <div id="chatLoading" aria-live="polite">
+          Memuat chat...
+        </div>
+
+        <!-- Empty State -->
+        <div id="chatEmpty" hidden>
+          Belum ada pesan.<br>Jadilah yang pertama memulai percakapan.
+        </div>
+
+        <!-- Realtime Messages Container -->
+        <div
+          id="chatMessages"
+          role="log"
+          aria-live="polite"
+          aria-label="Pesan chat"
+        ></div>
+
+        <!-- Anti Spam / Cooldown Alert -->
+        <div id="chatCooldown" hidden aria-live="assertive">
+          Tunggu beberapa detik sebelum mengirim pesan lagi.
+        </div>
+
+        <!-- Chat Form -->
+        <form id="chatForm">
+          <div class="chat-input-container">
+            <input
+              id="chatInput"
+              type="text"
+              maxlength="500"
+              autocomplete="off"
+              placeholder="Tulis pesan..."
+              required
+            >
+            <span id="chatCounter">0/500</span>
+          </div>
+          <button id="chatSend" type="submit" class="btn btn-primary">
+            Kirim
+          </button>
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- Developer Section -->
+    <section class="content-section developer-section" aria-labelledby="developerHeading">
+      <div class="developer-card">
+        <h2 id="developerHeading">Developed by Keelz Valentine</h2>
+        <p>Pengembang resmi layanan NEXUS KNIGHT ANIME.</p>
+        <a
+          href="https://whatsapp.com/channel/0029Vb8KFvB5K3zXkMDEiv1M"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-dev"
+        >
+          Saluran Keelz Valentine
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>NEXUS KNIGHT ANIME</h2>
+        <p>Developed by Keelz Valentine</p>
+      </div>
+      <div class="footer-links">
+        <a
+          href="https://whatsapp.com/channel/0029Vb8KFvB5K3zXkMDEiv1M"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Saluran Keelz Valentine
+        </a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; NEXUS KNIGHT ANIME — Developed by Keelz Valentine</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
