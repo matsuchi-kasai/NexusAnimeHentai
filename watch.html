@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nonton Anime — NEXUS KNIGHT ANIME</title>
+  <meta name="description" content="Nonton anime di NEXUS KNIGHT ANIME. Developed by Keelz Valentine.">
+  <meta name="theme-color" content="#050505">
+
+  <!-- File CSS Utama -->
+  <link rel="stylesheet" href="./style.css">
+  
+  <!-- File Script Logic Player & Watch Page -->
+  <script type="module" src="./watch.js" defer></script>
+</head>
+<body>
+
+  <!-- Header & Navigasi Utama -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="/" aria-label="NEXUS KNIGHT ANIME Home">
+          <span class="logo-title">NEXUS KNIGHT</span>
+          <span class="logo-subtitle">ANIME</span>
+        </a>
+      </div>
+
+      <nav aria-label="Navigasi Utama">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/anime.html">Anime</a></li>
+          <li><a href="/chat.html">Chat</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/anime.html" class="btn btn-secondary">Cari Anime</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <main>
+
+    <!-- Breadcrumb -->
+    <section class="content-section">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li><a href="/">Home</a></li>
+          <li>/</li>
+          <li><a href="/anime.html">Anime</a></li>
+          <li>/</li>
+          <li id="breadcrumbTitle" aria-current="page">Watch</li>
+        </ol>
+      </nav>
+    </section>
+
+    <!-- Navigation Back Button & Quick Chat Action -->
+    <section class="content-section">
+      <div class="quick-nav-actions">
+        <a href="/anime.html" class="btn btn-secondary">&larr; Kembali ke Anime</a>
+        <a href="/chat.html" class="btn btn-secondary">&#128172; Diskusi Anime</a>
+      </div>
+    </section>
+
+    <!-- Watch Section Page Container -->
+    <section id="watchPage" class="content-section" aria-live="polite">
+
+      <!-- Global Watch Loading State -->
+      <div id="watchLoading">
+        <p>Memuat video dan data episode...</p>
+      </div>
+
+      <!-- Global Watch Error State -->
+      <section id="watchError" hidden aria-live="assertive">
+        <h2>Episode tidak ditemukan atau gagal dimuat.</h2>
+        <button type="button" id="watchRetry" class="btn btn-primary">Coba Lagi</button>
+      </section>
+
+      <!-- Watch Content Container -->
+      <div id="watchContent" hidden>
+
+        <!-- Video Player Container -->
+        <div class="player-container">
+          <div class="video-wrapper">
+            <video
+              id="animePlayer"
+              aria-label="Pemutar video anime"
+              controls
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <!-- Player Loading Overlay -->
+            <div id="playerLoading" hidden>
+              <span>Memuat video...</span>
+            </div>
+
+            <!-- Player Error Overlay -->
+            <div id="playerError" hidden>
+              <p>Video gagal dimuat. Coba pilih episode atau sumber lain.</p>
+            </div>
+          </div>
+
+          <!-- Controls, Quality & Playback Info Toolbar -->
+          <div class="player-toolbar">
+            <div id="qualitySelector">
+              <span class="quality-label">Kualitas</span>
+              <div class="quality-options" id="qualityOptions"></div>
+            </div>
+
+            <div id="playbackStatus" aria-live="polite">
+              <span>Siap diputar</span>
+            </div>
+
+            <button type="button" id="saveProgress" class="btn btn-secondary">
+              Simpan Progress
+            </button>
+          </div>
+        </div>
+
+        <!-- Anime & Episode Details -->
+        <article class="watch-info-card">
+          <h1 id="animeTitle"></h1>
+          <p id="episodeTitle"></p>
+          <p id="animeDescription"></p>
+        </article>
+
+        <!-- Episode Navigation (Previous / Next) -->
+        <div id="episodeNavigation" class="episode-nav-container">
+          <button type="button" id="prevEpisode" class="btn btn-secondary" disabled>
+            &larr; Episode Sebelumnya
+          </button>
+          <button type="button" id="nextEpisode" class="btn btn-secondary" disabled>
+            Episode Berikutnya &rarr;
+          </button>
+        </div>
+
+        <!-- Episode List Section -->
+        <section id="episodeSection">
+          <h2>Daftar Episode</h2>
+          <div id="episodeList"></div>
+        </section>
+
+      </div>
+
+    </section>
+
+    <!-- Developer Section -->
+    <section class="content-section developer-section" aria-labelledby="developerHeading">
+      <div class="developer-card">
+        <h2 id="developerHeading">Developed by Keelz Valentine</h2>
+        <p>Pengembang resmi layanan NEXUS KNIGHT ANIME.</p>
+        <a
+          href="https://whatsapp.com/channel/0029Vb8KFvB5K3zXkMDEiv1M"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-dev"
+        >
+          Saluran Keelz Valentine
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>NEXUS KNIGHT ANIME</h2>
+        <p>Developed by Keelz Valentine</p>
+      </div>
+      <div class="footer-links">
+        <a
+          href="https://whatsapp.com/channel/0029Vb8KFvB5K3zXkMDEiv1M"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Saluran Keelz Valentine
+        </a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 NEXUS KNIGHT ANIME</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
