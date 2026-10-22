@@ -1,0 +1,22 @@
+{
+  "name": "nexus-knight-anime",
+  "version": "1.0.0",
+  "description": "NEXUS KNIGHT ANIME - Modern anime streaming web application developed by Keelz Valentine.",
+  "type": "module",
+  "main": "index.html",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev",
+    "build": "echo \"Static deployment - no build step required\""
+  },
+  "keywords": [
+    "anime",
+    "streaming",
+    "nexus-knight",
+    "vercel",
+    "firebase"
+  ],
+  "author": "Keelz Valentine",
+  "license": "MIT"
+}
