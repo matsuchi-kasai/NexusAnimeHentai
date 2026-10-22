@@ -1,0 +1,12 @@
+# robots.txt - NEXUS KNIGHT ANIME
+User-agent: *
+Allow: /
+
+# Internal API Proxy Endpoint (disallow crawler access)
+Disallow: /api/
+
+# Sensitive configuration & environment files
+Disallow: /.env
+Disallow: /.env.local
+Disallow: /.env.production
+Disallow: /database.rules.json
